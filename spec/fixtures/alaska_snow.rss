@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+ xmlns:blogChannel="http://backend.userland.com/blogChannelModule"
+ xmlns:ots="http://www.onthesnow.com/ots_rss_namespace/"
+>
+<channel>
+<title>Alaska Ski &#x26; Snow Report | OnTheSnow.com</title>
+<link>http://www.onthesnow.com/alaska/skireport.html?XE_AFF=rss</link>
+<description>Includes the Alaska ski report and weather reports for all ski resorts in Alaska. OnTheSnow is primary source of all Alaska snow reports on the web.</description>
+<language>en-us</language>
+<copyright>Copyright 2010, OnTheSnow. Commercial use of this feed is prohibited without specific written approval from Mountain News. For commercial use feeds, please visit MountainNews.com</copyright>
+<image>
+<title>OnTheSnow</title>
+<url>http://images.onthesnow.com/ots/images/logo_image/en/snow-report.gif</url>
+<link>http://www.onthesnow.com</link>
+</image>
+<item>
+<title>Alyeska</title>
+<description>Open  / Past 48 Hours: 0in. / Primary: Packed Powder / Base Depth: 112in.</description>
+<guid isPermaLink="true">http://www.onthesnow.com/alaska/alyeska-resort/skireport.html?XE_AFF=rss</guid>
+<pubDate>Fri, 20 Jan 2012 12:17:50 -0500</pubDate>
+<ots:open_staus>Open</ots:open_staus>
+<ots:resort_id>11</ots:resort_id>
+<ots:base_depth>112</ots:base_depth>
+<ots:snowfall_48hr>0</ots:snowfall_48hr>
+<ots:region_name>Alaska</ots:region_name>
+<ots:surface_condition>Packed Powder</ots:surface_condition>
+<ots:base_depth_metric>inches</ots:base_depth_metric>
+<ots:snowfall_48hr_metric>inches</ots:snowfall_48hr_metric>
+<ots:resort_rss_link>http://www.onthesnow.com/alaska/alyeska-resort/snow.rss</ots:resort_rss_link>
+</item>
+<item>
+<title>Eaglecrest</title>
+<description>Open  / Past 48 Hours: 0in. / Primary: Packed Powder / Base Depth: 148in.</description>
+<guid isPermaLink="true">http://www.onthesnow.com/alaska/eaglecrest-ski-area/skireport.html?XE_AFF=rss</guid>
+<pubDate>Fri, 20 Jan 2012 10:56:23 -0500</pubDate>
+<ots:open_staus>Open</ots:open_staus>
+<ots:resort_id>141</ots:resort_id>
+<ots:base_depth>148</ots:base_depth>
+<ots:snowfall_48hr>0</ots:snowfall_48hr>
+<ots:region_name>Alaska</ots:region_name>
+<ots:surface_condition>Packed Powder</ots:surface_condition>
+<ots:base_depth_metric>inches</ots:base_depth_metric>
+<ots:snowfall_48hr_metric>inches</ots:snowfall_48hr_metric>
+<ots:resort_rss_link>http://www.onthesnow.com/alaska/eaglecrest-ski-area/snow.rss</ots:resort_rss_link>
+</item>
+<item>
+<title>Hilltop</title>
+<description>Open  / Past 48 Hours: 0in. / Primary: Machine Groomed / Base Depth: 12in.</description>
+<guid isPermaLink="true">http://www.onthesnow.com/alaska/hilltop-ski-area/skireport.html?XE_AFF=rss</guid>
+<pubDate>Fri, 20 Jan 2012 08:24:41 -0500</pubDate>
+<ots:open_staus>Open</ots:open_staus>
+<ots:resort_id>2908</ots:resort_id>
+<ots:base_depth>12</ots:base_depth>
+<ots:snowfall_48hr>0</ots:snowfall_48hr>
+<ots:region_name>Alaska</ots:region_name>
+<ots:surface_condition>Machine Groomed</ots:surface_condition>
+<ots:base_depth_metric>inches</ots:base_depth_metric>
+<ots:snowfall_48hr_metric>inches</ots:snowfall_48hr_metric>
+<ots:resort_rss_link>http://www.onthesnow.com/alaska/hilltop-ski-area/snow.rss.html</ots:resort_rss_link>
+</item>
+</channel>
+</rss>
