@@ -14,7 +14,7 @@ module OnTheSnow
       end
 
       def to_hash
-        {"info" => infos, "elevation" => elevation, "lifts" => lifts, "slopes" => slopes, "snow" => snow, "weather" => weather}
+        @hash ||= {"info" => infos, "elevation" => elevation, "lifts" => lifts, "slopes" => slopes, "snow" => snow, "weather" => weather}
       end
 
       def self.all
