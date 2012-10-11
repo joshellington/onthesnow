@@ -10,6 +10,10 @@ module OnTheSnow
         @name ||= dom(:info).text unless dom(:info).empty?
       end
 
+      def description
+        @description ||= dom(:resort_description).search("p")[0].text
+      end
+
       def states
         @states ||= dom(:states).map{|e| e.text} unless dom(:states).empty?
       end
