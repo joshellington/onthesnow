@@ -3,7 +3,7 @@ module OnTheSnow
     module Info
 
       def infos
-        @infos ||= {"name" => name, "states" => states, "url" => url} unless dom(:info).empty? && dom(:states).empty?
+        @infos ||= {"name" => name, "description" => description, "states" => states, "url" => url} unless dom(:info).empty? && dom(:states).empty?
       end
 
       def name
