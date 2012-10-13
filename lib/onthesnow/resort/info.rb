@@ -31,11 +31,7 @@ module OnTheSnow
       end
 
       def trail_map
-        if dom(:trail_map).at_css("a.fancybox-thumb")
-          @trail_map ||= dom(:trail_map).css("a.fancybox-thumb")[0][:href]
-        else
-          @trail_map = ""
-        end
+        @trail_map ||= dom(:trail_map).css(".module").last.css("img")[0][:src].gsub(/mid/, 'xlarge')
       end
 
       def regions
