@@ -4,6 +4,7 @@ module OnTheSnow
       include OnTheSnow::Resort::Info
       include OnTheSnow::Resort::Lifts
       include OnTheSnow::Resort::Slopes
+      include OnTheSnow::Resort::Trails
       include OnTheSnow::Resort::Elevation
       include OnTheSnow::Resort::Snow
       include OnTheSnow::Resort::Weather
@@ -64,6 +65,9 @@ module OnTheSnow
           css_selector = ".contact_wrap"
         when :trail_map
           css_selector = "#right_rail"
+        when :trails
+          css_selector = "#snow_report_trails"
+          path = "skireport"
         when :body
           css_selector = "*"
           path = "weather"
