@@ -7,22 +7,21 @@ module OnTheSnow
       end
 
       def beginner_trails
-        @beginner_trails ||= dom(:trails).css(".beginner div")[0].text.cleanup unless dom(:trails).empty?
+        @beginner_trails ||= dom(:trails).css(".beginner div")[0].text.gsub(/\s+/, '').gsub(/\n/, '') unless dom(:trails).empty?
       end
 
       def intermediate_trails
-        @intermediate_trails ||= dom(:trails).css(".intermediate div")[0].text.cleanup unless dom(:trails).empty?
+        @intermediate_trails ||= dom(:trails).css(".intermediate div")[0].text.gsub(/\s+/, '').gsub(/\n/, '') unless dom(:trails).empty?
       end
 
       def advanced_trails
-        @advanced_trails ||= dom(:trails).css(".advanced div")[0].text.cleanup unless dom(:trails).empty?
+        @advanced_trails ||= dom(:trails).css(".advanced div")[0].text.gsub(/\s+/, '').gsub(/\n/, '') unless dom(:trails).empty?
       end
 
       def expert_trails
-        @expert_trails ||= dom(:trails).css(".expert div")[0].text.cleanup unless dom(:trails).empty?
+        @expert_trails ||= dom(:trails).css(".expert div")[0].text.gsub(/\s+/, '').gsub(/\n/, '') unless dom(:trails).empty?
       end
 
-      private
       def cleanup
         self.gsub(/\s+/, '').gsub(/\n/, '')
       end
