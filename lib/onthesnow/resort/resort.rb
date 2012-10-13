@@ -39,7 +39,7 @@ module OnTheSnow
 
       private
       def dom(name)
-        path ||= 'profile'
+        path ||= "profile"
 
         case name
         when :elevation
@@ -62,6 +62,9 @@ module OnTheSnow
           css_selector = ".contact_details"
         when :contact_wrap
           css_selector = ".contact_wrap"
+        when :trail_map
+          css_selector = ".trailMap"
+          path = "trailmap"
         when :body
           css_selector = "*"
           path = "weather"

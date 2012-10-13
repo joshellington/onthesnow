@@ -3,7 +3,7 @@ module OnTheSnow
     module Info
 
       def info
-        @info ||= {"name" => name, "description" => description, "phone" => phone, "image" => image, "regions" => regions, "url" => url} unless dom(:info).empty? && dom(:regions).empty?
+        @info ||= {"name" => name, "description" => description, "phone" => phone, "image" => image, "trail-map" => trail_map, "regions" => regions, "url" => url} unless dom(:info).empty? && dom(:regions).empty?
       end
 
       def name
@@ -20,6 +20,10 @@ module OnTheSnow
 
       def image
         @image ||= dom(:description).css("#resort_image img")[0][:src]
+      end
+
+      def trail_map
+        @trail_map ||= dom(:trail_map).css("a.fancybox-thumb")[0][:href]
       end
 
       def regions
