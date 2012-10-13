@@ -11,11 +11,7 @@ module OnTheSnow
       end
 
       def description
-        @description ||= dom(:description).css("p")[1].text.gsub(/\n/, '').gsub(/\t/, '')
-      end
-
-      def image
-        @image ||= dom(:description).css("#resort_image img")[0][:src]
+        @description ||= dom(:description).css("p").last.text.gsub(/\n/, '').gsub(/\t/, '') unless dom(:description).empty?
       end
 
       def phone
@@ -27,7 +23,7 @@ module OnTheSnow
       end
 
       def image
-        @image ||= dom(:description).css("#resort_image img")[0][:src]
+        @image ||= dom(:description).css("#resort_image img")[0][:src] unless dom(:description).css("#resort_image img").empty?
       end
 
       def trail_map
