@@ -53,6 +53,8 @@ module OnTheSnow
           ".forecast_content"
         when :states
           ".rel_regions a"
+        when :description
+          "#resort_description"
         else
           raise "Missing dom element"
         end

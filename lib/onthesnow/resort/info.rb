@@ -3,7 +3,7 @@ module OnTheSnow
     module Info
 
       def infos
-        @infos ||= {"name" => name, "description" => description, "states" => states, "url" => url} unless dom(:info).empty? && dom(:states).empty?
+        @infos ||= {"name" => name, "description" => description, "image" => image, "states" => states, "url" => url} unless dom(:info).empty? && dom(:states).empty?
       end
 
       def name
@@ -11,7 +11,11 @@ module OnTheSnow
       end
 
       def description
-        @description ||= dom(:resort_description).search("p")[0].text
+        @description ||= dom(:description).css("p")[1].text.gsub(/\n/, '').gsub(/\t/, '')
+      end
+
+      def image
+        @image ||= dom(:description).css("#resort_image img")[0][:src]
       end
 
       def states
