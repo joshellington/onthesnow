@@ -15,11 +15,11 @@ module OnTheSnow
       end
 
       def phone
-        @phone ||= dom(:contact).search("p")[2].text.gsub('Phone: ', '')
+        @phone ||= dom(:contact).search("p")[2].text.gsub('Phone: ', '') unless dom(:contact).empty?
       end
 
       def website
-        @website ||= dom(:contact_wrap).search("p a")[0].text
+        @website ||= dom(:contact_wrap).search("p a")[0].text unless dom(:contact_wrap).empty?
       end
 
       def image
@@ -28,7 +28,7 @@ module OnTheSnow
 
       def trail_map
         # @trail_map ||= dom(:trail_map).css(".module").text
-        @trail_map ||= dom(:trail_map).css(".module img.overview")[0][:src].gsub(/mid/, 'xlarge')
+        @trail_map ||= dom(:trail_map).css(".module img.overview")[0][:src].gsub(/mid/, 'xlarge') unless dom(:trail_map).empty?
       end
 
       def regions
