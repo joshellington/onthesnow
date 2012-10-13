@@ -63,8 +63,7 @@ module OnTheSnow
         when :contact_wrap
           css_selector = ".contact_wrap"
         when :trail_map
-          css_selector = ".trailMap"
-          path = "trailmap"
+          css_selector = "#right_rail"
         when :body
           css_selector = "*"
           path = "weather"

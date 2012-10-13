@@ -31,7 +31,8 @@ module OnTheSnow
       end
 
       def trail_map
-        @trail_map ||= dom(:trail_map).css("a.fancybox-thumb")[0][:href]
+        # @trail_map ||= dom(:trail_map).css(".module img.overview")[0][:src]
+        @trail_map ||= dom(:trail_map).css(".module").text
       end
 
       def regions
