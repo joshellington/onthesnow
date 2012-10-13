@@ -14,6 +14,10 @@ module OnTheSnow
         @description ||= dom(:description).css("p")[1].text.gsub(/\n/, '').gsub(/\t/, '')
       end
 
+      def image
+        @image ||= dom(:description).css("#resort_image img")[0][:src]
+      end
+
       def phone
         @phone ||= dom(:contact).search("p")[2].text.gsub('Phone: ', '')
       end
