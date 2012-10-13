@@ -11,7 +11,7 @@ module OnTheSnow
       def initialize(url)
         @url    = url
         @api = OnTheSnow::API.instance
-        @cache = ActiveSupport::Cache::MemoryStore.new
+        # @cache = ActiveSupport::Cache::MemoryStore.new
       end
 
       def to_hash
@@ -64,21 +64,13 @@ module OnTheSnow
           css_selector = ".contact_wrap"
         when :body
           css_selector = "*"
-          path = 'weather'
+          path = "weather"
         else
           raise "Missing dom element"
         end
 
         final = url+'/'+path+'.html'
-        
-        if @cache.read(final)
-          @cache.read(final)
-        else
-          res = @api.profile(final).search(css_selector)
-          
-          @cache.write(final, res, :expires_in => 5.minutes)
-          @cache.read(final)
-        end
+        @api.profile(final).search(css_selector)
       end
 
     end
