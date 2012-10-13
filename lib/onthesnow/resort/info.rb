@@ -3,7 +3,7 @@ module OnTheSnow
     module Info
 
       def info
-        @info ||= {"name" => name, "description" => description, "phone" => phone, "image" => image, "trail_map" => trail_map, "regions" => regions, "url" => url} unless dom(:info).empty? && dom(:regions).empty?
+        @info ||= {"name" => name, "description" => description, "phone" => phone, "website" => website, "image" => image, "trail_map" => trail_map, "regions" => regions, "url" => url} unless dom(:info).empty? && dom(:regions).empty?
       end
 
       def name
@@ -20,6 +20,10 @@ module OnTheSnow
 
       def phone
         @phone ||= dom(:contact).search("p")[2].text.gsub('Phone: ', '')
+      end
+
+      def website
+        @website ||= dom(:contact_wrap).search("p a")[0].text
       end
 
       def image
