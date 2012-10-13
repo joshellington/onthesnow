@@ -72,11 +72,11 @@ module OnTheSnow
           raise "Missing dom element"
         end
 
-        if url.include? '/profile.html'
-          url.gsub! '/profile.html', ''
-        end
+        # if url.include? '/profile.html'
+        #   url.gsub! '/profile.html', ''
+        # end
 
-        url = url.sub(/(\/)+$/, '')
+        # url = url.gsub(/\/*$/)
 
         final = url+'/'+path+'.html'
         @api.profile(final).search(css_selector)
