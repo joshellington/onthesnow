@@ -71,9 +71,9 @@ module OnTheSnow
           raise "Missing dom element"
         end
 
-        # if url.include? '/profile.html'
-        #   url.gsub! '/profile.html', ''
-        # end
+        if url.include? '/profile.html'
+          url.gsub! '/profile.html', ''
+        end
 
         # url = url.gsub(/\/*$/)
 

@@ -31,8 +31,8 @@ module OnTheSnow
       end
 
       def trail_map
-        @trail_map ||= dom(:trail_map).css(".module").text
-        # @trail_map ||= dom(:trail_map).css(".module").last.css("img")[0][:src].gsub(/mid/, 'xlarge')
+        # @trail_map ||= dom(:trail_map).css(".module").text
+        @trail_map ||= dom(:trail_map).css(".module img.overview")[0][:src].gsub(/mid/, 'xlarge')
       end
 
       def regions
