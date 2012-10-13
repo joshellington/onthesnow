@@ -11,6 +11,7 @@ module OnTheSnow
       def initialize(url)
         @url    = url
         @api = OnTheSnow::API.instance
+        @cache = ActiveSupport::Cache::MemoryStore.new
       end
 
       def to_hash
@@ -38,26 +39,46 @@ module OnTheSnow
 
       private
       def dom(name)
-        css_selector = case name
+        path ||= 'profile'
+
+        case name
         when :elevation
-          "#resort_elevation"
+          css_selector = "#resort_elevation"
         when :info
-          ".resort_name"
+          css_selector = ".resort_name"
         when :lifts
-          "#resort_lifts"
+          css_selector = "#resort_lifts"
         when :slopes
-          "#resort_terrain"
+          css_selector = "#resort_terrain"
         when :snow
-          ".snow_report"
+          css_selector = ".snow_report"
         when :weather
-          ".forecast_content"
-        when :states
-          ".rel_regions a"
+          css_selector = ".forecast_content"
+        when :regions
+          css_selector = ".rel_regions a"
+        when :description
+          css_selector = "#resort_description"
+        when :contact
+          css_selector = ".contact_details"
+        when :contact_wrap
+          css_selector = ".contact_wrap"
+        when :body
+          css_selector = "*"
+          path = 'weather'
         else
           raise "Missing dom element"
         end
 
-        @api.profile(url).search(css_selector)
+        final = url+'/'+path+'.html'
+        
+        if @cache.read(final)
+          @cache.read(final)
+        else
+          res = @api.profile(final).search(css_selector)
+          
+          @cache.write(final, res, :expires_in => 5.minutes)
+          @cache.read(final)
+        end
       end
 
     end
