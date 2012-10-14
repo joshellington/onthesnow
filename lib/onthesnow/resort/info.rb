@@ -32,7 +32,7 @@ module OnTheSnow
       end
 
       def regions
-        @regions ||= dom(:regions).map{|e| e.text} unless dom(:regions).empty?
+        @regions ||= dom(:regions).map{ |e| e.text.strip.gsub(/\t/,'') } unless dom(:regions).empty?
       end
 
       def url
