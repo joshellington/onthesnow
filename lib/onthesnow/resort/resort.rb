@@ -71,6 +71,9 @@ module OnTheSnow
         when :body
           css_selector = "*"
           path = "weather"
+        when :depths
+          css_selector = "#snow_depth"
+          path = "skireport"
         else
           raise "Missing dom element"
         end
