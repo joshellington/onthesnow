@@ -28,7 +28,7 @@ module OnTheSnow
 
       def trail_map
         # @trail_map ||= dom(:trail_map).css(".module").text
-        @trail_map ||= dom(:trail_map).css(".module img.overview")[0][:src].gsub(/mid/, 'xlarge') unless dom(:trail_map).empty?
+        @trail_map ||= dom(:trail_map).css(".module img.overview")[0][:src].gsub(/mid/, 'xlarge') unless dom(:trail_map).css(".module img.overview").empty?
       end
 
       def regions
